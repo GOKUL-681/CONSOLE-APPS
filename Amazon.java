@@ -1,9 +1,6 @@
 package app;
 import java.util.*;
 
-import javax.swing.plaf.synth.SynthStyleFactory;
-
-
 class Amazon {
     private static Scanner sc;
     static int n;
@@ -34,17 +31,14 @@ class Amazon {
                 user.u_ser();
             case 4: 
                 System.exit(0);
-                break;
-                
+                break;        
         }  
-
     }
   
     public static void main(String[] args) {
         //objects
             intialpage();
-
-}
+    }
 }
 
 
@@ -98,10 +92,7 @@ class Admin {
                     break;
                 default:
                     System.out.println("Invalid input");
-            }
-             
-
-        
+            }       
     }
     static void approval() {
         for(int i=0;i<approval_waiting.size();i++){
@@ -228,30 +219,22 @@ class Merchant{
                     String prize = sc.nextLine();
                     product.product_details.get(i).set(2,prize);
                
-                    product.productReview();
-                    
+                    product.productReview();        
             }
-           
         }
-
     }
+    
     //new_merchant
     static void new_merchant(){
-
-       
         sc.nextLine();
-        
         System.out.println("Enter your name : ");
         String mer_name = sc.nextLine();
-       Admin.approval_waiting.add(mer_name);
+        Admin.approval_waiting.add(mer_name);
         System.out.println("Enter your password : ");
         int mer_pass = sc.nextInt();
         newcode_mer.add(mer_pass);
         System.out.println(newname_mer +" "+ newcode_mer); 
-      Amazon.intialpage();
-  
-        
-      
+        Amazon.intialpage();    
     }
     void mer_chant(){
         System.out.println(" Welcome Merchant");
@@ -297,7 +280,6 @@ class product {
                 System.out.println("\033[H\033[2J");
                  Merchant.Merchantpage();
                 break;
-
         }
     }
     //productreview
@@ -322,15 +304,13 @@ class product {
                  System.out.printf("%-15s",i+1);
                  for(int j =0 ;j<product_details.get(i).size();j++){
                      System.out.printf("%-15s",product_details.get(i).get(j));
-
                  }
-              
               System.out.print("\n");
             }
             User.product_page();
             System.out.println("");
-
     }
+    
     //addProdcut
     static void addProduct(){
          ArrayList<String> pro_details = new ArrayList<String>();
@@ -363,8 +343,6 @@ class product {
     public static void main(String[] args){
         sc =  new Scanner(System.in);
         amazon_product();
-       
-
     }
 }
 
@@ -486,15 +464,15 @@ class User{
         static void user_interest(){
             System.out.println();
             int ch=0;
-            // System.out.println("1.Order");
+            System.out.println("1.Place Order");
             System.out.println("2.Add to chart");
             System.out.println("3.Exit");
             System.out.println("Enter your choice : ");
             ch = sc.nextInt();
             switch(ch){
-                // case 1:
-                // System.out.println("\033[H\033[2J");
-                //     break;
+                case 1:
+                 System.out.println("\033[H\033[2J");
+                     break;
                 case 2:
                 System.out.println("\033[H\033[2J");
                     addChart1();
@@ -507,8 +485,8 @@ class User{
         static void favourite_page(){
             System.out.println("No fav..!");
         }
-        //buyy
-        static void buyy(){
+        //buy
+        static void buy(){
           System.out.println(by_product);
           System.out.println("Please enter to continue");
           sc.nextLine();
@@ -518,10 +496,7 @@ class User{
           }
                 
         }
-        //buyview
-        // static void buyView(){
-        //     System.out.println(buy);
-        // }
+        
         //addchart
         static void addChart1(){
             System.out.println(chart);
